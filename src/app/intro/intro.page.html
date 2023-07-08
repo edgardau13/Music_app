@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+</ion-header>
+<ion-content>
+  <ion-icon name="arrow-back-outline" class="back" (click)="finish()"></ion-icon>
+  <swiper-container [initialSlide]="0">
+
+    <swiper-slide *ngFor="let slides of Slides">
+      <h1>{{slides.title}}</h1>
+      <img class="img" src="{{slides.img}}">
+      <p class="spotify">{{slides.description}}</p>
+    </swiper-slide>
+
+  </swiper-container>
+</ion-content>

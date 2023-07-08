@@ -1,39 +1,17 @@
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
+ion-content {
+  --background:white;
+}
+
+h2 {
+  color: black;
   text-align: center;
 }
-
-.imgspotify {
-  width: 160px;
-  height: 160px;
+.iconprin {
+  font-size: 250px;
+  color: black;
+  margin-top: 286px;
+  margin-left: 80px;
 }
 
-.spotify {
-  font-family: cursive;
-  color: greenyellow;
-}
 
-.imgapple {
-  width: 160px;
-  height: 160px;
-}
 
-.imgdeezer {
-  width: 160px;
-  height: 160px;
-}
-
-.deezer {
-  font-family: 'Courier New', Courier, monospace;
-  color: orange;
-}
-
-.imgamazon {
-  width: 160px;
-  height: 160px;
-}
-
-.amazon {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: aqua;
-}
