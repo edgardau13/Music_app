@@ -8,10 +8,18 @@ h1 {
     width: 160px;
     height: 160px;
   }
-  
+
   .spotify {
-    font-family: cursive;
+    font-family: var(--font-family-letter);
     color: greenyellow;
+  }
+
+  .spotify:hover {
+    color: var(--color-letter);
+  }
+
+  .spotify:hover::before {
+    color: var(--ion-color-primary);
   }
 
   .back {
