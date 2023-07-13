@@ -15,7 +15,7 @@ export class HomePage {
   }
 
   finish() {
-    this.router.navigateByUrl("/intro");
+    this.router.navigateByUrl("/login");
   }
 
 }
