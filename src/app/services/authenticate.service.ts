@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 
 @Injectable({
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthenticateService {
 
-  constructor() { }
+  constructor(private storage: Storage) { }
 
   loginUser(credentials:any){
     return new Promise((accept, reject)=> {
@@ -20,5 +21,10 @@ export class AuthenticateService {
         reject("Correo o contraseña invalida")
       }
     })
+  }
+
+  registerUser(userData:any){
+    userData.password = btoa(userData.password);
+    return this.storage.set("user", userData);
   }
 }
