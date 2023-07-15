@@ -10,12 +10,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'menu/page1',
     pathMatch: 'full'
   },
   {
     path: 'intro',
-    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule), canActivate: [LoginGuard, IntroGuard]
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   },
   {
     path: 'login',
@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule), canActivate: [IntroGuard, LoginGuard]
+  }
 ];
 
 @NgModule({
