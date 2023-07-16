@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { AlertController } from '@ionic/angular';
 
 
 @Injectable({
@@ -7,7 +8,16 @@ import { Storage } from '@ionic/storage';
 })
 export class AuthenticateService {
 
-  constructor(private storage: Storage) { }
+  constructor(private storage: Storage, private alertController: AlertController) { }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Invalido',
+      message: 'Correo o contraseña invalidos',
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
 
   loginUser(credentials:any){
     return new Promise((accept, reject)=> {
@@ -18,10 +28,12 @@ export class AuthenticateService {
       {
         accept("login exitoso")
       }else {
-        reject("Correo o contraseña invalida")
+        reject(this.presentAlert())
       }
     })
   }
+
+ 
 
   registerUser(userData:any){
     userData.password = btoa(userData.password);

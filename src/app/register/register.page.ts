@@ -9,6 +9,27 @@ import { AuthenticateService } from '../services/authenticate.service';
 })
 export class RegisterPage implements OnInit {
   registerForm: FormGroup;
+  validation_messages = {
+    email: [
+      { type: "required", message: "El email es obligatio" },
+      /**{ type: "pattern", message: "Debe poner un email valido" },**/
+      { type: "email", message: "Por favor, ingrese un correo electrónico válido." }
+    ],
+    password: [
+      { type: "required", message: "La contraseña es obligatoria" },
+      { type: "minlength", message: "La contraseña debe tener min 6 caracteres" }
+    ],
+    name: [
+      { type: "required", message: "El nombre es obligatoria" },
+      { type: "minlength", message: "La contraseña debe tener min 2 caracteres" },
+      { type: "maxlength", message: "La contraseña debe tener max 25 caracteres" }
+    ],
+    last_name: [
+      { type: "required", message: "El nombre es obligatoria" },
+      { type: "minlength", message: "La contraseña debe tener min 2 caracteres" },
+      { type: "maxlength", message: "La contraseña debe tener max 25 caracteres" }
+    ]
+  }
 
   constructor(
     private formBuilder: FormBuilder, 
@@ -22,7 +43,8 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+.[a-zA-Z0-9.-]+$")
+              /**Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+.[a-zA-Z0-9.-]+$"),**/
+              Validators.email
           ]
           )
         ),
