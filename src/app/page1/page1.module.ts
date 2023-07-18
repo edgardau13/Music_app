@@ -7,8 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { Page1PageRoutingModule } from './page1-routing.module';
 
 import { Page1Page } from './page1.page';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
     FormsModule,
