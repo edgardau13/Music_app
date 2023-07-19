@@ -9,6 +9,7 @@ register();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  
   constructor(private storage: Storage) {}
 
   async ngOnInit() {
