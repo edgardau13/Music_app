@@ -3,9 +3,9 @@
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<img class="logo" src="/assets/images/logo.png">
 <ion-content>
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
 
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email"></ion-input>
@@ -47,6 +47,17 @@
   <ion-button expand="full" shape="round" color="success" (click)="goToRegister()">
     Registrate
   </ion-button>
+  <ion-row class="ion-justify-content-center ion-align-items-center">
+    <ion-col size="auto">
+      <ion-icon name="logo-apple" size="large"></ion-icon>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-icon name="logo-facebook" size="large"></ion-icon>
+    </ion-col>
+    <ion-col size="auto">
+      <ion-icon name="logo-google" size="large"></ion-icon>
+    </ion-col>
+  </ion-row>
 </ion-footer>
 
 </ion-content>

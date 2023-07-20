@@ -8,9 +8,9 @@
     <ion-title>register</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<img class="logo" src="/assets/images/logo.png">
 <ion-content>
- <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+ <form class="register-form" [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
   <ion-item>
     <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email"></ion-input>
   </ion-item>
@@ -76,6 +76,9 @@
   </div>
 
   <ion-button
+      expand="full" 
+      shape="round" 
+      color="success"
       type="submit"
       [disabled]="!registerForm.valid"
     >
