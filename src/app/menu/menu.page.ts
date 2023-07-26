@@ -27,4 +27,12 @@ export class MenuPage implements OnInit {
     this.navCtrl.navigateForward("/intro")
   }
 
+  goToSettings(){
+    this.menu.close();
+    this.navCtrl.navigateForward('/menu/settings');
+  }
+  goHome(){
+    this.menu.close();
+    this.navCtrl.navigateRoot('/menu/page1')
+  }
 }

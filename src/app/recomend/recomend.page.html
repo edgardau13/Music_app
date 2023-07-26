@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back-outline" class="back" (click)="finish()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <h4>Artistas que te podrian gustar</h4>
+  <swiper-container [initialSlide]="0" [slidesPerView]="4">
+
+    <swiper-slide *ngFor="let localArts of localArtists">
+      <ion-avatar (click)="showSongs(localArts)">
+        <img src="{{localArts['images'][2]['url']}}" />
+        <span>{{localArts.name}}</span>
+      </ion-avatar>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

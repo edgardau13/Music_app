@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MusicSerService } from '../services/music-ser.service';
 import { ModalController } from '@ionic/angular';
 import { SongsModalPage } from '../songs-modal/songs-modal.page';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-page1',
@@ -10,7 +11,7 @@ import { SongsModalPage } from '../songs-modal/songs-modal.page';
 })
 export class Page1Page {
   artists: any;
-  localArtists: any;
+
   song = {
     name:'',
     playing: false,
@@ -20,16 +21,13 @@ export class Page1Page {
   currentSong: any;
   newTime: any;
   albums: any;
-  constructor(private musicServ: MusicSerService, private modalController: ModalController) { }
+  constructor(private musicServ: MusicSerService, private modalController: ModalController, private navController: NavController) { }
 
   ionViewDidEnter(){
     this.musicServ.getArtists().then(listArtists => {
       this.artists = listArtists;
       console.log("variable",this.artists);
     })
-
-    this.localArtists = this.musicServ.getArtistsFromJson();
-    console.log(this.localArtists.artists);
 
     this.musicServ.getAlbums().then(listAlbums =>{
       this.albums = listAlbums;
@@ -105,6 +103,10 @@ export class Page1Page {
     }else{
       return "0:00"
     }
+  }
+
+  goToRecomend(){
+    this.navController.navigateForward('/recomend');
   }
 
 }

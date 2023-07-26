@@ -12,6 +12,10 @@ const routes: Routes = [
         path: "page1",
         loadChildren: () => 
         import("../page1/page1.module").then(m => m.Page1PageModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../settings/settings.module').then( m => m.SettingsPageModule)
       }
       
     ]

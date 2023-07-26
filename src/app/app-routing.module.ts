@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'menu/page1',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -32,6 +32,14 @@ const routes: Routes = [
   {
     path: 'songs-modal',
     loadChildren: () => import('./songs-modal/songs-modal.module').then( m => m.SongsModalPageModule)
+  },
+  {
+    path: 'recomend',
+    loadChildren: () => import('./recomend/recomend.module').then( m => m.RecomendPageModule)
+  },
+  {
+    path: 'modal-songslocal',
+    loadChildren: () => import('./modal-songslocal/modal-songslocal.module').then( m => m.ModalSongslocalPageModule)
   }
 ];
 
